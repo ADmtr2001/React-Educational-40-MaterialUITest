@@ -3,14 +3,14 @@ import Notes from "./pages/Notes";
 import Create from "./pages/Create";
 import { createTheme } from "@mui/material";
 import { ThemeProvider } from "@mui/material";
-import { orange } from "@mui/material/colors";
+import { purple } from "@mui/material/colors";
 
 const theme = createTheme({
   palette: {
     primary: {
       main: "#00AA00",
     },
-    secondary: orange,
+    secondary: purple,
   },
 });
 
