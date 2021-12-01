@@ -1,19 +1,33 @@
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-import Notes from './pages/Notes'
-import Create from './pages/Create'
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Notes from "./pages/Notes";
+import Create from "./pages/Create";
+import { createTheme } from "@mui/material";
+import { ThemeProvider } from "@mui/material";
+import { orange } from "@mui/material/colors";
+
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: "#00AA00",
+    },
+    secondary: orange,
+  },
+});
 
 function App() {
   return (
-    <Router>
-      <Switch>
-        <Route exact path="/">
-          <Notes />
-        </Route>
-        <Route path="/create">
-          <Create />
-        </Route>
-      </Switch>
-    </Router>
+    <ThemeProvider theme={theme}>
+      <Router>
+        <Switch>
+          <Route exact path='/'>
+            <Notes />
+          </Route>
+          <Route path='/create'>
+            <Create />
+          </Route>
+        </Switch>
+      </Router>
+    </ThemeProvider>
   );
 }
 

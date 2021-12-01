@@ -1,7 +1,6 @@
 import { Button, Container, Typography } from "@mui/material";
 import React from "react";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
-// });
 
 export default function Create() {
   return (
@@ -11,10 +10,7 @@ export default function Create() {
         color='textSecondary'
         component='h2'
         gutterBottom
-        sx={{
-          textDecoration: "underline",
-          marginBottom: "20px",
-        }}
+        sx={{}}
       >
         Create a New Note
       </Typography>
@@ -25,13 +21,7 @@ export default function Create() {
         variant='contained'
         onClick={() => console.log("you clicked me")}
         endIcon={<KeyboardArrowRightIcon />}
-        sx={{
-          fontSize: 60,
-          backgroundColor: "violet",
-          "&:hover": {
-            backgroundColor: "blue",
-          },
-        }}
+        sx={{}}
       >
         Submit
       </Button>
