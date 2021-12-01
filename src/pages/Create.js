@@ -1,4 +1,14 @@
-import { Button, Container, TextField, Typography } from "@mui/material";
+import {
+  Button,
+  Container,
+  FormControl,
+  FormControlLabel,
+  FormLabel,
+  Radio,
+  RadioGroup,
+  TextField,
+  Typography,
+} from "@mui/material";
 import React, { useState } from "react";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 
@@ -13,6 +23,7 @@ export default function Create() {
   const [details, setDetails] = useState("");
   const [titleError, setTitleError] = useState(false);
   const [detailsError, setDetailsError] = useState(false);
+  const [category, setCategory] = useState("todos");
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -29,7 +40,7 @@ export default function Create() {
     }
 
     if (title && details) {
-      console.log(title, details);
+      console.log(title, details, category);
     }
   };
 
@@ -69,6 +80,23 @@ export default function Create() {
           sx={field}
           error={detailsError}
         />
+
+        <FormControl sx={field}>
+          <FormLabel>Note Category</FormLabel>
+          <RadioGroup
+            value={category}
+            onChange={(e) => setCategory(e.target.value)}
+          >
+            <FormControlLabel value='money' control={<Radio />} label='Money' />
+            <FormControlLabel value='todos' control={<Radio />} label='Todos' />
+            <FormControlLabel
+              value='reminders'
+              control={<Radio />}
+              label='Reminders'
+            />
+            <FormControlLabel value='work' control={<Radio />} label='Work' />
+          </RadioGroup>
+        </FormControl>
 
         <Button
           type='submit'
